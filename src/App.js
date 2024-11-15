@@ -1,24 +1,23 @@
-import logo from './logo.svg';
 import './App.css';
+import React, { useState, useEffect } from "react"; 
+import Home from "./components/Home/Home";
+import Imprint from "./components/Imprint/Imprint";
+import Privacy from "./components/Privacy/Privacy";
+import Footer from "./components/Footer";
+import Navbar from "./components/Navbar";
+import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/imprint" element={<Imprint />} />
+          <Route path="/privacy" element={<Privacy />} />
+        </Routes>
+    <Footer />
+    </BrowserRouter>
   );
 }
 
