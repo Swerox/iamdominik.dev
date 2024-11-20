@@ -1,11 +1,16 @@
 import React from "react";
+import { Container, Row, Col } from "react-bootstrap";
+import ParticlesComponent from "../Particles";
+
 
 function Home() {
     return (
-        <div>
+        <section>
+            <Container class="particlesComponent">
+                <ParticlesComponent />
+            </Container>
             <h1>HOME TAB</h1>
-            <button onClick={console.log("Hello World")}>Fick den lederer</button>
-        </div>
+        </section>
     );
 }
 
